@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>NAV</title>
+    <style>
+        * {
+       box-sizing: border-box;
+        }
+        body {
+            background: #0C0C0C:
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+        }
+        .header {
+            background-color: #0C0C0C;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px 0;
+        }
+      .nav  {
+            display: flex;
+        }
+        .nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            justify-content: center;
+        }
+        .nav li {
+            margin-right: 4px;
+        }
+
+        .nav ul a {
+            color: #fff;
+            text-decoration: none;
+            padding: 7px;
+            font-size: 1em;
+        }
+        .logo a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 1.5em;
+          margin-left: 12px;
+        }
+        /* BURASI ANIMATION ISTESEN SILE BILERSEN */
+        .nav li::after {
+            content: '';
+            display:block;
+            margin: 3px auto auto auto;
+            width: 0;
+            height: 1px;
+            transition: 800ms width;
+            background-color: orange;
+        } 
+
+        .nav li:hover::after {
+            width: 100%;
+        }
+        /* ANIMATION BITDI */
+        #autoText {
+            color: rgba(255, 255, 71, 0.993);
+        }
+        
+
+        .content {
+            width: 100wv;
+            height: calc(100vh - 47px);
+            border-top: 1px solid orange;
+            background-color: #0C0C0C;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text {
+            color: #fafafc;
+        }
+        .text h1 {
+          font-size: 2em;
+        }
+        .menu {
+            display: none;
+        }
+        @media screen and (max-width: 500px) {
+              .menu {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                cursor: pointer;
+                height: 30px;
+                color: #fff;
+              }
+             .header {
+                 background-color: #0C0C0C;
+                 display: block;
+              }
+             .nav ul {
+                flex-direction: column;
+                display: block !important;
+                
+            }
+            .select {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 5px;
+            }
+            .nav {
+                 display: block !important;
+                 position: fixed;
+                 left: -100%;
+                 
+            }
+
+            .fa-solid {
+                font-size: 20px;
+                text-align: center;
+                color: #fff;
+            }
+            .nav ul li a {
+                text-align: center;
+                display: block;
+            }
+
+
+        }
+        .nav.active {
+            left: 0;
+            top: 70px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="select">
+        
+        </div>
+        <nav class="nav">
+            <ul id="ul">
+                <li><a href="/">home</a></li>
+
+                <li><a href="/portfolio">contact</a></li>
+            </ul>
+        </nav>
+    </div>

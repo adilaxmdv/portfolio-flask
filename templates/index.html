@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block head %}
+<style>
+    .content{
+        flex-direction: column;
+        width: 100wv;
+        height: calc(100vh - 47px);
+        border-top: 1px solid green;
+        background-color: rgb(34, 34, 34);
+        display: none;
+        justify-content: center;
+        align-items: left;
+    }
+    h1,p{
+        text-align: center;
+    }
+    p{ width: 700px }
+</style>
+{% endblock head %}
+{% block body %}
+<div class="content">
+    <div class="text">
+        <h1> 💡 Self-taught python developer</h1>
+        <p>Hi! My name is Adil.I'am 17 years old backend developer from Azerbaijan.I've been programming since I was 13.I started programming with Python and continue with it.</p>
+        
+    </div>
+    <div class="text">
+        <h1>I am <span id="autoText"></span></h1>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script>
+    let typed = new Typed("#autoText",{
+        strings: ["Python Developer","Backend Developer"], // bunlar ne yazilsin
+        typeSpeed: 150, // yazma sureti
+        backSpeed: 150, // silme sureti
+        loop: true // sonsuz loop (men bilen :D)
+    });
+
+    $(document).ready(function() {  
+
+    $(".logo").click(function() {
+          $(".nav").toggleClass("active");
+    });
+
+
+});
+
+</script> 
+{% endblock body %}
